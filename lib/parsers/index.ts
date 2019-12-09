@@ -1,6 +1,7 @@
 import * as parseXML from 'xml2js';
 import * as _ from 'lodash';
 import {InvalidUserInputError} from '../errors';
+import { VersionProvenance } from '@snyk/dep-graph';
 
 export interface PkgTree {
   name: string;
@@ -13,6 +14,7 @@ export interface PkgTree {
   cyclic?: boolean;
   targetFrameworks?: string[];
   dependenciesWithUnknownVersions?: string[];
+  versionProvenance: VersionProvenance;
 }
 
 export interface DependencyWithoutVersion {
